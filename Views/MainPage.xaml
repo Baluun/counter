@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.Views.MainPage"
+             BackgroundColor="#F2F4F8">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="14">
+
+            <Label Text="My Counters"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#202535" />
+
+            <Entry x:Name="NameEntry"
+                   Placeholder="Counter name"
+                   TextColor="#202535"
+                   PlaceholderColor="#687086"
+                   BackgroundColor="White" />
+
+            <Entry x:Name="StartValueEntry"
+                   Placeholder="Starting value (optional)"
+                   Keyboard="Numeric"
+                   TextColor="#202535"
+                   PlaceholderColor="#687086"
+                   BackgroundColor="White" />
+
+            <Button Text="Add counter"
+                    BackgroundColor="#4B79E8"
+                    TextColor="White"
+                    CornerRadius="12"
+                    Clicked="OnAddCounterClicked" />
+
+            <Button Text="Save counters"
+                    BackgroundColor="#4A9B70"
+                    TextColor="White"
+                    CornerRadius="12"
+                    Clicked="OnSaveClicked" />
+            
+            <Label x:Name="StatusLabel"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   TextColor="#687086" />
+
+            <VerticalStackLayout x:Name="CountersLayout" Spacing="14" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
