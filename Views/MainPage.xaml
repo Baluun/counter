@@ -7,32 +7,32 @@
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="14">
 
-            <Label Text="My Counters"
+            <Label Text="{Binding TitleText}"
                    FontSize="32"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="#202535" />
 
             <Entry x:Name="NameEntry"
-                   Placeholder="Counter name"
+                   Placeholder="{Binding NameHint}"
                    TextColor="#202535"
                    PlaceholderColor="#687086"
                    BackgroundColor="White" />
 
             <Entry x:Name="StartValueEntry"
-                   Placeholder="Starting value (optional)"
+                   Placeholder="{Binding StartValueHint}"
                    Keyboard="Numeric"
                    TextColor="#202535"
                    PlaceholderColor="#687086"
                    BackgroundColor="White" />
 
-            <Button Text="Add counter"
+            <Button Text="{Binding AddButtonText}"
                     BackgroundColor="#4B79E8"
                     TextColor="White"
                     CornerRadius="12"
                     Clicked="OnAddCounterClicked" />
 
-            <Button Text="Save counters"
+            <Button Text="{Binding SaveButtonText}"
                     BackgroundColor="#4A9B70"
                     TextColor="White"
                     CornerRadius="12"
