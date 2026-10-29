@@ -6,9 +6,11 @@ namespace Projekt.Views
     {
         private List<CounterData> counters = new();
         private string saveFile = Path.Combine(FileSystem.AppDataDirectory, "counters.txt");
+        private PageTexts texts = new();
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = texts;
             LoadCounters();
         }
         private void LoadCounters()
