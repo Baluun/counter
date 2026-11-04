@@ -4,8 +4,9 @@
              x:Class="Projekt.Views.MainPage"
              BackgroundColor="#F2F4F8">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="24" Spacing="14">
+    <Grid Padding="24" RowDefinitions="Auto,*" RowSpacing="14">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="14">
 
             <Label Text="{Binding TitleText}"
                    FontSize="32"
@@ -37,14 +38,61 @@
                     TextColor="White"
                     CornerRadius="12"
                     Clicked="OnSaveClicked" />
-            
+
             <Label x:Name="StatusLabel"
                    FontSize="14"
                    HorizontalOptions="Center"
                    TextColor="#687086" />
-
-            <VerticalStackLayout x:Name="CountersLayout" Spacing="14" />
-
         </VerticalStackLayout>
-    </ScrollView>
+
+        <CollectionView x:Name="CountersView" Grid.Row="1">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical" ItemSpacing="14" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border BackgroundColor="White"
+                            Padding="18"
+                            StrokeThickness="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16" />
+                        </Border.StrokeShape>
+
+                        <VerticalStackLayout Spacing="12">
+                            <Label Text="{Binding Name}"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   TextColor="#202535" />
+
+                            <Label Text="{Binding Value}"
+                                   FontSize="48"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   TextColor="#202535" />
+
+                            <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+                                <Button Grid.Column="0"
+                                        Text="−"
+                                        FontSize="28"
+                                        BackgroundColor="#E75B5B"
+                                        TextColor="White"
+                                        CornerRadius="12"
+                                        Clicked="OnMinusClicked" />
+                                <Button Grid.Column="1"
+                                        Text="+"
+                                        FontSize="28"
+                                        BackgroundColor="#4B79E8"
+                                        TextColor="White"
+                                        CornerRadius="12"
+                                        Clicked="OnPlusClicked" />
+                            </Grid>
+                        </VerticalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
 </ContentPage>
