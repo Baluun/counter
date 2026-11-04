@@ -72,7 +72,7 @@ namespace Projekt.Views
         private void OnAddCounterClicked(object? sender, EventArgs e)
         {
             string name = NameEntry.Text?.Trim() ?? "";
-            if (name == "")
+            if(name == "")
             {
                 name = "Counter";
             }
